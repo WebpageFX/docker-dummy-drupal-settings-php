@@ -103,10 +103,10 @@ if (!function_exists('getenv_docker')) {
  */
 
 $databases['default']['default'] = [
-    'database' => getenv_docker('DB_NAME', 'drupal'),
-    'username' => getenv_docker('DB_USER', 'drupal'),
-    'password' => getenv_docker('DB_PASSWORD', 'drupal'),
-    'host' => getenv_docker('DB_HOST', 'mysql'),
+    'database' => getenv_docker('DB_NAME', 'project'),
+    'username' => getenv_docker('DB_USER', 'project'),
+    'password' => getenv_docker('DB_PASSWORD', 'complexpassword'),
+    'host' => getenv_docker('DB_HOST', '9ea4262e-9c46-4ab2-8e50-7f7d2703576e_db'),
     'port' => getenv_docker('DB_PORT', '3306'),
     'driver' => getenv_docker('DB_DRIVER', 'mysql'),
     'prefix' => '',
@@ -313,7 +313,7 @@ $databases['default']['default'] = [
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = '';
+$settings['hash_salt'] = getenv_docker('HASH_SALT', 'asdf');
 
 /**
  * Deployment identifier.
