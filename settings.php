@@ -106,11 +106,11 @@ $databases['default']['default'] = [
     'database' => getenv_docker('DB_NAME', 'project'),
     'username' => getenv_docker('DB_USER', 'project'),
     'password' => getenv_docker('DB_PASSWORD', 'complexpassword'),
-    'host' => getenv_docker('DB_HOST', '9ea4262e-9c46-4ab2-8e50-7f7d2703576e_db'),
+    'host' => getenv_docker('DB_HOST', 'db'),
     'port' => getenv_docker('DB_PORT', '3306'),
     'driver' => getenv_docker('DB_DRIVER', 'mysql'),
-    'prefix' => '',
-    'collation' => 'utf8mb4_general_ci',
+    'prefix' => getenv_docker('DB_TABLE_PREFIX', ''),
+    'collation' => getenv_docker('DB_COLLATION', 'utf8mb4_general_ci'),
 ];
 
 /**
